@@ -1,8 +1,8 @@
 export class Pet {
     constructor(name){
         this.name=name;
-        this.hunger=50;
-        this.happiness=50;
+        this.hunger=0;
+        this.happiness=0;
 
 }
 
