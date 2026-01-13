@@ -14,22 +14,22 @@ function App() {
 
 
 const getPetImage = () => {
-  // 1. URGENT: If the pet is starving or miserable, show Crying first!
+  
   if (myPet.hunger >= 85 || myPet.happiness < 20) { 
     return crying; 
   }
 
-  // 2. BAD: If the pet is quite hungry or sad, show Sad.
+  
   if (myPet.hunger >= 70 || myPet.happiness < 40) { 
     return sad; 
   }
 
-  // 3. OKAY: If hunger is in the middle, show Neutral.
+  
   if (myPet.hunger >= 40 || myPet.happiness < 70) { 
     return neutral; 
   }
 
-  // 4. GREAT: Only show Happy if BOTH hunger is low AND happiness is high!
+  
   return happy; 
 };
 
@@ -89,7 +89,7 @@ const handleReset = () => {
       <div className="pet-card">
         <img src={getPetImage()} alt="Pet Mood" className="pet-mood-img" />
         <h1>{myPet.name}</h1>
-        {/* ... Rest of your existing Pet Card code ... */}
+        
 
         
 <p className = "status-text">Mood: <strong>{myPet.getStatus()}</strong></p>

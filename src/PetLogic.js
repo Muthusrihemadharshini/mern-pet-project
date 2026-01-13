@@ -23,22 +23,22 @@ return `${this.name} loved playing with you!`;
 }
 
 getStatus() {
-  // 1. URGENT: Match with 'crying' image logic
+  
   if (this.hunger >= 85 || this.happiness < 20) {
     return "Very Sad!";
   }
 
-  // 2. BAD: Match with 'sad' image logic
+  
   if (this.hunger >= 70 || this.happiness < 40) {
     return "Sad";
   }
 
-  // 3. OKAY: Match with 'neutral' image logic
+  
   if (this.hunger >= 40 || this.happiness < 70) {
     return "Feeling Meh...";
   }
 
-  // 4. GREAT: Default state
+  
   return "Doing Great!";
 }
 }
