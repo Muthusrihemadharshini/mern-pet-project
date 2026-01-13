@@ -65,7 +65,7 @@ const handleReset = () => {
         <p>Welcome! Are you ready to take care of your new best friend?</p>
         <div className="button-group-vertical">
           <button className="action-btn" onClick={() => setGameState("play")}>🎮 Start Play</button>
-          <button className="rules-btn" onClick={() => setGameState("rules")}>📜 Read Rules</button>
+          <button className="action-btn" onClick={() => setGameState("rules")}>📜 Read Rules</button>
         </div>
       </div>
     )}

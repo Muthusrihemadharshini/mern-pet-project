@@ -1,4 +1,4 @@
-/* 1. Global Background and Alignment */
+
 #root {
   width: 100%;
   margin: 0 auto;
@@ -7,7 +7,7 @@
 }
 
 :root {
-  /* Soft, warm background gradient */
+  
   background: linear-gradient(135deg, #6ec9d7 0%, #e222ae 100%);
   min-height: 100vh;
   display: flex;
@@ -17,10 +17,10 @@
   color: #2d3436;
 }
 
-/* 2. Glassmorphism Card (Used for Welcome, Rules, and Pet) */
+
 .welcome-card, .rules-card, .pet-card {
-  background: rgba(255, 255, 255, 0.2); /* Semi-transparent */
-  backdrop-filter: blur(12px); /* Frosty effect */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px); 
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 25px;
@@ -31,14 +31,14 @@
   transition: transform 0.3s ease;
 }
 
-/* 3. Image Styling */
+
 .welcome-img, .pet-mood-img {
   width: 180px;
   height: 180px;
   border-radius: 20px;
   margin-bottom: 20px;
   object-fit: contain;
-  /* Floating animation */
+  
   animation: float 3s ease-in-out infinite;
 }
 
@@ -48,7 +48,7 @@
   100% { transform: translateY(0px); }
 }
 
-/* 4. Progress Bars (Stats) */
+
 .stats-container {
   margin: 20px 0;
   text-align: left;
@@ -82,7 +82,7 @@
 .hunger { background: #ff7675; }
 .happiness { background: #55efc4; }
 
-/* 5. Modern Buttons */
+
 .button-group, .button-group-vertical {
   display: flex;
   gap: 10px;
@@ -130,7 +130,7 @@
 
 }
 
-/* 6. Rules List Styling */
+
 .rules-list {
   text-align: left;
   font-size: 0.9rem;
