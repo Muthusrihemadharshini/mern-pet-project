@@ -1,42 +1,143 @@
+/* 1. Global Background and Alignment */
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+:root {
+  /* Soft, warm background gradient */
+  background: linear-gradient(135deg, #6ec9d7 0%, #e222ae 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  color: #2d3436;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 2. Glassmorphism Card (Used for Welcome, Rules, and Pet) */
+.welcome-card, .rules-card, .pet-card {
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent */
+  backdrop-filter: blur(12px); /* Frosty effect */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  width: 340px;
+  margin: auto;
+  transition: transform 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* 3. Image Styling */
+.welcome-img, .pet-mood-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  object-fit: contain;
+  /* Floating animation */
+  animation: float 3s ease-in-out infinite;
 }
 
-.card {
-  padding: 2em;
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
-.read-the-docs {
-  color: #888;
+/* 4. Progress Bars (Stats) */
+.stats-container {
+  margin: 20px 0;
+  text-align: left;
+}
+
+.stat-row {
+  margin-bottom: 12px;
+}
+
+.stat-row span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.progress-bg {
+  background: rgba(0, 0, 0, 0.08);
+  height: 12px;
+  border-radius: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hunger { background: #ff7675; }
+.happiness { background: #55efc4; }
+
+/* 5. Modern Buttons */
+.button-group, .button-group-vertical {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button-group-vertical {
+  flex-direction: column;
+}
+
+.action-btn, .rules-btn {
+  background: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.action-btn:hover {
+  background: #2d3436;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.reset-btn {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  color: #636e72;
+  transition: 0.2s;
+}
+
+.reset-btn:hover {
+  background: black;
+  color:white;
+  border-color: white;
+
+}
+
+/* 6. Rules List Styling */
+.rules-list {
+  text-align: left;
+  font-size: 0.9rem;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+.rules-list li {
+  margin-bottom: 10px;
 }

@@ -10,6 +10,8 @@ import crying from './assets/crying.png';
 function App() {
   const [myPet, setMyPet] = useState(new Pet("Fluffy"));
 
+  const [gameState, setGameState] = useState("welcome");
+
 
 const getPetImage = () => {
   // 1. URGENT: If the pet is starving or miserable, show Crying first!
@@ -54,10 +56,42 @@ const handleReset = () => {
 };
 
   return (
-    <div className="container">
+ <div className="container">
+    {/* --- WELCOME SCREEN --- */}
+    {gameState === "welcome" && (
+      <div className="welcome-card">
+        <h1>🐾 Digital Pet Palace</h1>
+        <img src={happy} alt="Welcome Pet" className="welcome-img" />
+        <p>Welcome! Are you ready to take care of your new best friend?</p>
+        <div className="button-group-vertical">
+          <button className="action-btn" onClick={() => setGameState("play")}>🎮 Start Play</button>
+          <button className="rules-btn" onClick={() => setGameState("rules")}>📜 Read Rules</button>
+        </div>
+      </div>
+    )}
+
+    {/* --- RULES SCREEN --- */}
+    {gameState === "rules" && (
+      <div className="rules-card">
+        <h2>Game Rules</h2>
+        <ul className="rules-list">
+          <li>Keep Hunger below 80% or the pet gets cranky!</li>
+          <li>If Happiness drops below 20%, your pet will cry.</li>
+          <li>Feeding reduces hunger by 15.</li>
+          <li>Playing increases happiness by 20.</li>
+        </ul>
+        <button className="action-btn" onClick={() => setGameState("welcome")}>🔙 Back</button>
+      </div>
+    )}
+
+
+    {gameState === "play" && (
       <div className="pet-card">
-        <img src = {getPetImage()} alt = "Pet Mood" className = "pet-mood-img"/>
-<h1>{myPet.name}</h1>
+        <img src={getPetImage()} alt="Pet Mood" className="pet-mood-img" />
+        <h1>{myPet.name}</h1>
+        {/* ... Rest of your existing Pet Card code ... */}
+
+        
 <p className = "status-text">Mood: <strong>{myPet.getStatus()}</strong></p>
 
 <div className  = "stats-container">
@@ -70,10 +104,11 @@ const handleReset = () => {
 
 <div className = "stat-row">
 <span>Happiness:{myPet.happiness}%</span>
+<div className = "progress-bg">
 <div className = "progress-fill happiness" style={{ width: `${myPet.happiness}%` }}></div>
             </div>
           </div>
-
+</div>
 
 <div className = "button-group">
 <button className = "action-btn" onClick ={handleFeed}>🥗 Feed</button>
@@ -84,10 +119,11 @@ const handleReset = () => {
 <button className = "reset-btn" onClick ={handleReset}>
 🔄 Start Over
 </button>
-</div>
-</div>
-);
-
+<button className="reset-btn" onClick={() => setGameState("welcome")}>🏠 Exit to Menu</button>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default App;
