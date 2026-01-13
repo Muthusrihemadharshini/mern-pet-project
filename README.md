@@ -47,6 +47,6 @@ Run npm install.
 Run npm run dev.
 
 ## 🏁 Final Project Status
-Live Link: [Paste your Vercel/Netlify link here]
+Live Link: https://fluffy-game-object-oriented-pet.vercel.app/
 
 MLH Challenge Submission: Object Oriented Pet
